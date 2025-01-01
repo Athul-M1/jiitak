@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { use } from 'react'
 
 const ResetPassword = () => {
   const [isVisible,setIsVisible]=useState(false)

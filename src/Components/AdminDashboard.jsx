@@ -20,9 +20,6 @@ const AdminDashboard = () => {
             <div className="bg-gray-700 p-4">Cell 15</div>
             <div className="bg-gray-800 p-4">Cell 16</div>
         </div>
-
-
-
     )
 }
 

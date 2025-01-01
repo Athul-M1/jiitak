@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 const Login = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false)
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-[#F8F5F0]">
       <div className="w-full max-w-md p-8 space-y-4 bg-[#F8F5F0]">
