@@ -10,7 +10,7 @@ const UserDetails = () => {
     const getUsers = async () => {
         try {
             const response = await axios.get('https://jsonplaceholder.typicode.com/users')
-            console.log(response)
+            // console.log(response)
             // Storing the data to setUsers and setFilter states
             setUsers(response.data)
             setFilter(response.data)
@@ -39,16 +39,16 @@ const UserDetails = () => {
     }
     return (
         <div className="grid grid-cols-12 grid-rows-1">
-        <div className="col-span-3">
+        <div className="col-span-2">
           <Sidebar />
         </div>
-        <div className="bg-[#F8F5F0] col-span-9">
+        <div className="bg-[#F8F5F0] col-span-10">
           <div className="container mx-auto px-4 sm:px-9 w-full flex flex-col sm:flex-row sm:justify-between items-center py-4">
             <h2 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-0 text-center sm:text-left">
               Registered Users
             </h2>
             <div className="relative w-full sm:w-1/5">
-              {/* Magnifying Glass Icon */}
+              {/* Search Icon */}
               <span className="absolute top-1/2 transform -translate-y-1/2 left-3 text-gray-400">
                 <i className="fas fa-search text-[#878480]"></i>
               </span>
@@ -78,6 +78,7 @@ const UserDetails = () => {
                       <tr key={user.id} className="text-left">
                         <td className="px-4 py-2">{user.id}.</td>
                         <td className="px-4 py-2" title={user.name}>
+                          {/* tooltip */}
                           <div className="truncate w-32">{user.name}</div>
                         </td>
                         <td className="px-4 py-2" title={user.email}>
@@ -105,5 +106,4 @@ const UserDetails = () => {
       
     )
 }
-
 export default UserDetails

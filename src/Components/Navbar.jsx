@@ -1,21 +1,26 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { loginContext } from '../Context/ContextLogin'
 
 const Navbar = () => {
+    const { loginResopnse } = useContext(loginContext)
+    const [email, setEmail] = useState('')
+    useEffect(() => {
+        setEmail(sessionStorage.getItem('email'))
+    }, [loginResopnse])
     return (
         <>
-            {/* <div className="animate-pulse flex flex-col items-center gap-4 w-60">
-                <div>
-                    <div className="w-48 h-6 bg-slate-400 rounded-md" />
-                    <div className="w-28 h-4 bg-slate-400 mx-auto mt-3 rounded-md" />
-                </div>
-                
-            </div> */}
-
-            <div >
-                <h1 className='w-full text-3xl font-bold text-[#FF9500] border border-[#DFDAD4]'>Look</h1>
+            <div className='w-full flex justify-between mb-2' >
+                <h1 className=' px-2 text-3xl font-bold text-[#FF9500] '>JIITAK</h1>
+                {
+                    !email &&
+                    <Link to={'/signup'}><button className='px-2 text-2xl font-medium text-[#FF9500] '>signup</button></Link>
+                }
+                {email &&
+                    <i class="fa-regular fa-user text-2xl px-2"></i>
+                }
             </div>
         </>
     )
 }
-
 export default Navbar
